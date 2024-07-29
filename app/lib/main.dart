@@ -1,20 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'src/app.dart';
+import 'src/dependency_injection.dart' as di;
+
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  di.setup();
   runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
 }
