@@ -14,7 +14,7 @@ class AuthServiceImpl implements AuthService {
   // TODO: Uncomment this code when the real login API is available
 
   // Uri get _baseUri => Uri.https(
-  //       'example.com',
+  //       Env.authHost.value,
   //       loginEndpoint,
   //     );
 
