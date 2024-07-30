@@ -1,7 +1,7 @@
-import 'package:countries_app/src/dependency_injection.dart';
 import 'package:provider/provider.dart';
 
 import '../../authentication/controllers/auth_controller.dart';
+import '../../dependency_injection.dart';
 
 List<ChangeNotifierProvider> get providers {
   return [
@@ -9,6 +9,12 @@ List<ChangeNotifierProvider> get providers {
       create: (_) => AuthController(
         authService: serviceLocator(),
         storage: serviceLocator(),
+      ),
+    ),
+
+    ChangeNotifierProvider<HomeController>(
+      create: (_) => HomeController(
+        serviceLocator(),
       ),
     ),
   ];

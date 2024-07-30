@@ -53,19 +53,26 @@ class LoginPageState extends State<LoginPage> {
                   TextFormField(
                     autofocus: true,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
+                    keyboardType: TextInputType.emailAddress,
                     onChanged: controller.onUsernameChanged,
                     readOnly: state.isLoading,
                     validator: controller.validateUsername,
                     decoration: _buildUsernameFieldDecoration(),
+                    textInputAction: TextInputAction.next,
                   ),
                   Spacings.medium.verticalSpacing,
                   TextFormField(
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     obscureText: _isPasswordObscured,
+                    keyboardType: TextInputType.visiblePassword,
                     onChanged: controller.onPasswordChanged,
                     readOnly: state.isLoading,
                     validator: controller.validatePassword,
                     decoration: _buildPasswordFieldDecoration(),
+                    textInputAction: TextInputAction.go,
+                    onFieldSubmitted: (_) {
+                      return state.isLoading ? null : _handleLogin();
+                    },
                   ),
                   Spacings.xxl.verticalSpacing,
                   ElevatedButton(
@@ -112,12 +119,19 @@ class LoginPageState extends State<LoginPage> {
 
     final error = controller.state.errorMessage;
     if (mounted && error != null) {
+      final theme = Theme.of(context);
+      final colorScheme = theme.colorScheme;
+      final textTheme = theme.textTheme;
+
       final scaffoldMessenger = ScaffoldMessenger.of(context);
       scaffoldMessenger.clearSnackBars();
       scaffoldMessenger.showSnackBar(
         SnackBar(
-          content: Text(error),
-          backgroundColor: Colors.red,
+          content: Text(
+            error,
+            style: textTheme.bodyMedium?.copyWith(color: colorScheme.onError),
+          ),
+          backgroundColor: colorScheme.error,
           showCloseIcon: true,
           duration: const Duration(seconds: 2),
         ),

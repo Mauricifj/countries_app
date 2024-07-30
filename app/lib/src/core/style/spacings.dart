@@ -51,6 +51,18 @@ enum Spacings {
     return EdgeInsets.symmetric(vertical: value);
   }
 
+  EdgeInsets get margin {
+    return padding;
+  }
+
+  EdgeInsets get horizontalMargin {
+    return horizontalPadding;
+  }
+
+  EdgeInsets get verticalMargin {
+    return verticalPadding;
+  }
+
   Widget spacing({bool vertical = false, bool horizontal = false}) {
     return SizedBox(
       height: vertical ? value : 0,

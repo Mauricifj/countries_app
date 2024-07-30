@@ -21,7 +21,7 @@
 //     const password = 'test_password';
 
 //     setUpAll(() {
-//       registerFallbackValue(Uri());
+//       registerFallbackValue(FakeUri());
 //     });
 
 //     setUp(() {
