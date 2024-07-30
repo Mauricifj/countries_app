@@ -51,6 +51,13 @@ enum Spacings {
     return EdgeInsets.symmetric(vertical: value);
   }
 
+  static EdgeInsets symmetricPadding(Spacings horizontal, Spacings vertical) {
+    return EdgeInsets.symmetric(
+      horizontal: horizontal.value,
+      vertical: vertical.value,
+    );
+  }
+
   EdgeInsets get margin {
     return padding;
   }
@@ -61,6 +68,10 @@ enum Spacings {
 
   EdgeInsets get verticalMargin {
     return verticalPadding;
+  }
+
+  static EdgeInsets symmetricMargin(Spacings horizontal, Spacings vertical) {
+    return symmetricPadding(horizontal, vertical);
   }
 
   Widget spacing({bool vertical = false, bool horizontal = false}) {
