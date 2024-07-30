@@ -1,6 +1,6 @@
 # Countries App
 
-Country details delivered through a native Flutter experience.
+Country details are delivered through a native Flutter experience.
 
 ## Requirements
 
@@ -32,3 +32,18 @@ And finally, run the app:
 ```bash
 flutter run
 ```
+
+## Demo
+
+### iOS
+
+https://github.com/user-attachments/assets/c83a8099-f3e4-4165-9383-48fb6a3532ab
+
+### Android
+
+https://github.com/user-attachments/assets/7cfbee19-ae74-4b93-9346-8a8ac386f8cd
+
+### Web
+
+https://github.com/user-attachments/assets/3de9c66b-9bca-4a82-9459-219fa528b428
+
