@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../models/countries_response.dart';
-import '../services/countries_service.dart';
+import '../../core/models/country/country_error_type.dart';
+import '../../core/services/countries_service.dart';
 import 'states/home_state.dart';
 
 class HomeController extends ChangeNotifier {
@@ -19,13 +19,13 @@ class HomeController extends ChangeNotifier {
     notifyListeners();
 
     final result = await _countriesService.getAll();
-
-    if (result.error != null) {
+    final error = result.error;
+    if (error != null) {
       _state = _state.copyWith(isLoading: false);
-      switch (result.error) {
-        case CountriesErrorType.notFound:
+      switch (error) {
+        case CountryResponseErrorType.notFound:
           _state = _state.copyWith(errorType: HomeErrorType.emptyData);
-        case CountriesErrorType.serverError:
+        case CountryResponseErrorType.serverError:
           _state = _state.copyWith(errorType: HomeErrorType.serverError);
         default:
           _state = _state.copyWith(errorType: HomeErrorType.unknown);

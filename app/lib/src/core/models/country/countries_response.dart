@@ -1,8 +1,9 @@
-import 'country_simplified.dart';
+import '../../../home/models/country_simplified.dart';
+import 'country_error_type.dart';
 
 class CountriesResponse {
   final List<CountrySimplified>? countries;
-  final CountriesErrorType? error;
+  final CountryResponseErrorType? error;
   final bool isSuccess;
 
   const CountriesResponse({
@@ -13,7 +14,7 @@ class CountriesResponse {
 
   CountriesResponse copyWith({
     List<CountrySimplified>? countries,
-    CountriesErrorType? error,
+    CountryResponseErrorType? error,
     bool? isSuccess,
   }) {
     return CountriesResponse(
@@ -21,22 +22,5 @@ class CountriesResponse {
       error: error ?? this.error,
       isSuccess: isSuccess ?? this.isSuccess,
     );
-  }
-}
-
-enum CountriesErrorType {
-  notFound,
-  serverError,
-  unknown;
-
-  String get message {
-    switch (this) {
-      case notFound:
-        return 'Not found';
-      case serverError:
-        return 'Server Error';
-      case unknown:
-        return 'Unknown Error';
-    }
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'core/providers/providers.dart';
 import 'config/app_router.dart';
+import 'core/providers/providers.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -11,9 +11,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: providers,
-      child: MaterialApp(
-        routes: AppRouter.routes,
-        initialRoute: AppRouter.splash,
+      child: MaterialApp.router(
+        routerConfig: AppRouter.router,
       ),
     );
   }

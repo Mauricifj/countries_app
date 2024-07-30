@@ -4,7 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'authentication/services/auth_service.dart';
 import 'authentication/services/storage_service.dart';
 import 'core/services/http_service.dart';
-import 'home/services/countries_service.dart';
+import 'core/services/countries_service.dart';
 
 final serviceLocator = GetIt.instance;
 

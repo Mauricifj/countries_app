@@ -38,7 +38,7 @@ class AuthController extends ChangeNotifier {
   Future<void> init() async {
     // Simulate a delay to show the splash screen
     await Future.delayed(const Duration(seconds: 2));
-
+    
     final username = await _storage.read(_usernameKey);
 
     _state = _state.copyWith(

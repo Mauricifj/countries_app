@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 
-import '../models/http_body.dart';
-import '../models/http_error.dart';
-import '../models/http_response.dart';
-import '../models/status_code_x.dart';
+import '../models/http/http_body.dart';
+import '../models/http/http_error.dart';
+import '../models/http/http_response.dart';
+import '../models/http/status_code_x.dart';
 
 abstract interface class HttpService {
   Future<HttpResponse> get(

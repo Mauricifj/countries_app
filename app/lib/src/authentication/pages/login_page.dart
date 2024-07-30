@@ -1,9 +1,10 @@
-import 'package:countries_app/src/config/app_router.dart';
-import 'package:countries_app/src/core/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
+import '../../config/app_router.dart';
 import '../../core/style/spacings.dart';
+import '../../core/widgets/loading_widget.dart';
 import '../controllers/auth_controller.dart';
 
 class LoginPage extends StatefulWidget {
@@ -114,7 +115,7 @@ class LoginPageState extends State<LoginPage> {
 
     final isAuthenticated = controller.state.isAuthenticated;
     if (mounted && isAuthenticated) {
-      Navigator.of(context).pushReplacementNamed(AppRouter.home);
+      context.goNamed(AppRouter.home);
     }
 
     final error = controller.state.errorMessage;

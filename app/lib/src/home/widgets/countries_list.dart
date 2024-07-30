@@ -13,12 +13,19 @@ class CountriesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: countries.length,
-      itemBuilder: (context, index) {
-        final country = countries[index];
-        return CountryCard(country: country);
-      },
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 600),
+        child: ListView.builder(
+          shrinkWrap: true,
+          primary: false,
+          itemCount: countries.length,
+          itemBuilder: (context, index) {
+            final country = countries[index];
+            return CountryCard(country: country);
+          },
+        ),
+      ),
     );
   }
 }

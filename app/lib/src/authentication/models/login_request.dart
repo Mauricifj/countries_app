@@ -1,4 +1,4 @@
-import '../../core/models/http_body.dart';
+import '../../core/models/http/http_body.dart';
 
 class LoginRequest implements HttpBody {
   final String? username;
