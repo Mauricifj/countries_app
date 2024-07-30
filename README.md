@@ -1,11 +1,11 @@
 # Countries App
 
-Country details are delivered through a native Flutter experience.
+Country details are delivered through a native Flutter experience for Android, iOS, and Web.
 
 ## Requirements
 
 - Flutter
-- Android or iOS device (emulator/simulator or physical)
+- Android or iOS device (emulator/simulator or physical) or Web Browser.
 
 ## Setup
 
@@ -27,10 +27,10 @@ And then, get the dependencies with:
 flutter pub get
 ```
 
-And finally, run the app:
+Finally, run the app providing the environment variables:
 
 ```bash
-flutter run
+flutter run --dart-define=COUNTRIES_HOST=restcountries.com --dart-define=COUNTRIES_HOST_VERSION=3.1
 ```
 
 ## Demo
@@ -46,4 +46,3 @@ https://github.com/user-attachments/assets/7cfbee19-ae74-4b93-9346-8a8ac386f8cd
 ### Web
 
 https://github.com/user-attachments/assets/3de9c66b-9bca-4a82-9459-219fa528b428
-
