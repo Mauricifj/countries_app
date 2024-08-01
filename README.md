@@ -1,5 +1,8 @@
 # Countries App
 
+[![Build and Test](https://github.com/Mauricifj/countries_app/actions/workflows/build.yml/badge.svg)](https://github.com/Mauricifj/countries_app/actions/workflows/build.yml)
+[![codecov](https://codecov.io/github/Mauricifj/countries_app/branch/main/graph/badge.svg?token=JVCFETLO10)](https://codecov.io/github/Mauricifj/countries_app)
+
 Country details are delivered through a native Flutter experience for Android, iOS, and Web.
 
 ## Requirements
